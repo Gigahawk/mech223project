@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[a4paper,margin=0.7in]{geometry}
+\usepackage{rotating}
+\usepackage{pgfgantt}
+\usepackage{pgfcalendar}
+\usepackage{datetime}
+\usepackage[none]{hyphenat}
+
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes}
+
+\pagenumbering{gobble}
+
+\begin{document}
+
+\begin{sidewaysfigure}
+	\centering
+	\noindent\resizebox{\textwidth}{!}{
+		\begin{ganttchart}[
+		x unit=0.45cm,
+		y unit chart=0.6cm,
+		hgrid,vgrid={dotted},
+		bar label node/.style={text width=1.5in, align=right,anchor=east},
+		group label node/.style={text width=1.5in, align=right,font=\bf,anchor=east},
+        ]
+		{04}{29}
+			\gantttitlelist{4,...,29}{1} \\
+			
+			\ganttbar{Project Management Meeting}{4}{4}\\
+			\ganttbar{Concept Generation}{7}{8}\\
+
+			\ganttgroup{Evaluation}{9}{11}\\
+			\ganttbar{Winnowing}{9}{9}\\
+			\ganttbar{Ranking}{9}{9}\\
+			\ganttbar{Scoring}{10}{11}\\
+
+			\ganttgroup{Detailed Design}{12}{18}\\
+			\ganttbar{Building}{12}{18}\\
+			\ganttbar{Testing}{12}{18}\\
+
+			\ganttmilestone{Preliminary prototype}{12} \\
+
+			\ganttgroup{Report}{8}{29}\\
+			\ganttbar{Body}{8}{20}\\
+			\ganttbar{Editing}{21}{29}\\
+			\ganttbar{Poster}{20}{24}\\
+			\ganttbar{Conclusion and Recommendation}{25}{29}\\
+
+			\ganttmilestone{Poster \& Competition Due}{24}\\
+
+			\ganttmilestone{Presentation}{26}
+
+		\end{ganttchart}
+	}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[h]
+	\centering
+	\noindent\resizebox{\textwidth}{!}{
+		\begin{tikzpicture}
+			\tikzstyle{every node}=[draw, shape=ellipse, minimum height=1.5cm, minimum width=3.5cm, text width=3cm, align=center,inner sep=0pt,node distance=1cm];
+
+			\node[shape=rectangle, rounded corners=0.5cm] (start) at (0,0) {Start};
+
+	%		\node (gantt) [right=of start] {Gantt Chart};
+			\node (congen) [right=of start] {Concept Generation};
+			\node (winnow) [right=of congen] {Winnowing};
+			\node (rank) [right=of winnow] {Ranking};
+			\node (score) [right=of rank] {Scoring};
+
+			% Center this properly later
+			\node (design) [right=of score] {Design in Detail};
+			\node (build) [above=of design] {Building};
+			\node (order) [below=of design] {Ordering Parts};
+			\node (test) [below=of order] {Testing};
+
+		\end{tikzpicture}
+	}
+\end{sidewaysfigure}
+
+
+
+\end{document}
+
