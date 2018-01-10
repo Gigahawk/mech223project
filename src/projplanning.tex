@@ -1,0 +1,40 @@
+\documentclass{report}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{rotating}
+
+\pagenumbering{gobble}
+% Begin new command
+\title{Tutorial 1-1: Project Management}
+\author{
+	Group D1:,
+	Aliia Almazbekova - 24346158,
+	Jasper Chan - 37467164,
+	Jacky Chan - 19835164,
+	Matteo Ferraresso - 36470169,
+	Adrian Lam - 23735160,
+	Janelle Lawson - 34680165,
+	David Stewart - 54071155,
+}
+\for{MECH 223 Instructors, University of British Columbia}
+
+\begin{document}
+
+\maketitle
+
+\begin{sidewaysfigure}
+	\centering
+	\noindent\resizebox{\textwidth}{!}{
+		\import{res/}{gantt.tex}
+	}
+\end{sidewaysfigure}
+
+\begin {sidewaysfigure}[h]
+	\centering
+	\noindent\resizebox{\textwidth}{!}{
+		\import{res/}{cpm.tex}
+	}
+\end{sidewaysfigure}
+
+\end{document}
+
