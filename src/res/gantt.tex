@@ -45,27 +45,25 @@
 	\ganttgroup[name=eval, group/.append style={fill=red}]{Evaluation}{9}{11}\\
 	\ganttbar[name=winnow, bar/.append style={fill=red}]{Winnowing}{9}{9}\\
 	\ganttbar[name=rank, bar/.append style={fill=red}]{Ranking}{9}{9}\\
-	\ganttbar[name=score, bar/.append style={fill=red}]{Scoring}{10}{11}\\
+	\ganttbar[name=score, bar/.append style={fill=red}]{Scoring}{10}{17}\\
 	\ganttlink[link type=f-s]{winnow}{rank}
 	\ganttlink{rank}{score}
 %			\ganttlink{congen}{eval}
 	\ganttlink[link type=f-s]{congen}{winnow}
 
 	\ganttgroup[name=design, group/.append style={fill=blue}]{Detailed Design}{12}{18}\\
-	\ganttbar[name=build, bar/.append style={fill=blue}]{Building}{12}{18}\\
-	\ganttbar[name=test, bar/.append style={fill=blue}]{Testing}{12}{18}\\
+	\ganttbar[name=build, bar/.append style={fill=blue}]{Building (Jasper, Matteo, Aliia, Arian)}{12}{18}\\
+	\ganttbar[name=test, bar/.append style={fill=blue}]{Testing (Janelle, Jacky, David)}{10}{18}\\
 %			\ganttlink{score}{design}
-	\ganttlink[link type=f-s]{score}{build}
-	\ganttlink[link type=f-s]{score}{test}
 
 	\ganttmilestone{Preliminary prototype}{12} \\
 
 	\ganttgroup[group/.append style={fill=green}]{Report}{8}{29}\\
-	\ganttbar[bar/.append style={fill=green}]{Body}{8}{20}\\
+	\ganttbar[bar/.append style={fill=green}]{Body (Matteo, Aliia, Adrian, David)}{8}{20}\\
 	\ganttbar[bar/.append style={fill=green}]{Editing}{21}{29}\\
 
-	\ganttbar[name=poster]{Poster}{19}{24}\\
-	\ganttbar[name=presentation]{Presentation}{19}{26}\\
+	\ganttbar[name=poster]{Poster (Jasper, Matteo, Janelle)}{19}{24}\\
+	\ganttbar[name=presentation]{Presentation (Jacky, David, Aliia, Adrian)}{19}{26}\\
 	\ganttmilestone[name=poscom]{Poster \& Competition Due}{24}\\
 	\ganttbar[name=rec,bar/.append style={fill=green}]{Conclusion and Recommendation}{25}{29}\\
 	\ganttlink{poster}{poscom}

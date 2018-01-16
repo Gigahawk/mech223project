@@ -1,0 +1,60 @@
+\documentclass[tikz,border=10pt,multi,rgb]{standalone}
+\usepackage[edges]{forest}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,shapes,positioning,scopes}
+\begin{document}
+\begin{forest}
+	for tree={
+		grow'=0,
+		parent anchor=children,
+		child anchor=parent,
+		text width=3cm,
+		draw,
+		anchor=parent,
+		if n children=0{folder}{},
+		edge path'={(!u.parent anchor) -- ++(5pt,0) |- (.child anchor)},
+	},
+	where n=1{
+		calign with current edge
+	}{},
+	[
+		[Accelerate relative to Ground,name=f1
+			[Motor and Wheels
+				[Transfer energy from motor to wheels
+					[Direct drive]
+					[Gear box]
+					[Belt drive]
+					[Chain drive]
+					[Friction drive]
+					[Fan or propellor]
+				]
+			]
+			[Motor and treads
+				[Transfer energy from motor to treads]
+			]
+			[Explosion and wheels
+				[Move explosives behind center of mass
+					[Chute of gunpowder with a servo]
+					[Gravity fed tube]
+					[Small fan]
+				]
+				[Set Off Explosives
+					[Lighter]
+					[Primer with pins]
+					[Arcing electricity]
+				]
+			]
+		]
+		[Decelerate relative to ground,name=f2
+			[Drum
+				[Apply pressure to wheels
+					[Servo]
+					[Hydraulics]
+					[Pneumatics]
+				]
+			]
+		]
+	]
+	\node [draw=black!50, fit={(f1) (f2)}] {};
+\end{forest}
+\end{document}
