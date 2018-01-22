@@ -4,7 +4,7 @@
 \usepackage{textcomp,fixltx2e}
 \usepackage{alphalph}
 \usepackage{forarray}
-\usetikzlibrary{fit,calc,shapes,positioning,scopes,backgrounds}
+\usetikzlibrary{fit,calc,shapes,positioning,scopes,backgrounds,arrows,arrows.meta}
 \begin{document}
 
 \forestset{
@@ -27,11 +27,8 @@
 	\ifcsname#1\endcsname
 		% Macro exists, append to end
 		\expandafter\edef\csname#1\endcsname{\expandafter\csname#1\endcsname #2}
-		\write0{EXISTING MACRO #1 #2}
-		\write0{\csname#1\endcsname}
 	\else
 		% Macro doesnt exist, create a new one
-		\write0{NEW MACRO #1 #2}
 		\expandafter\def\csname#1\endcsname{#2}
 		% add to list of created macros
 		\ifcsname subfunctions\endcsname
@@ -40,17 +37,7 @@
 			%subfunctions macro doesnt exist yet
 			\def\subfunctions{#1}
 		\fi
-
-		\write0{APPENDING TO LIST OF SUBFUNCTIONS}
-		\write0{\subfunctions}
 	\fi
-}
-
-% print the thingy
-\newcommand{\printsubfunc}[1]{
-	\write0{PRINTING SUBFUNC #1}
-	\write0{\expandafter\csname#1\endcsname}
-	\expandafter\csname#1\endcsname
 }
 
 \newcounter{topfunc}
@@ -67,14 +54,13 @@
 		draw,
 		anchor=parent,
 		if n children=0{folder}{},
-		edge path'={(!u.parent anchor) -- ++(5pt,0) |- (.child anchor)},
+		l sep=1cm,
+		edge path'={[-Latex,line width=0.7pt](!u.parent anchor) -- ++(5pt,0) |- (.child anchor)},
+		fit=band,
 	},
 	where n=1{
 		calign with current edge
 	}{},
-%	set firstfunction/.style{
-%   		%label={[align=left,text width=4cm,yshift=0.1cm] \large{\textbf{Top Level}}},
-%	},
 	set root/.style={
 		draw=none,
 		fill=none
@@ -217,19 +203,122 @@
 					[Pneumatics]
 				]
 			]
+			[High coefficient of friction
+				[Rubber pads]
+				[Sticky pads]
+				[Rough wheels]
+			]
+			[Spike
+				[Force spike into ground
+					[Servo motor]
+					[Heavy spike with release latch]
+					[Shoot spike into ground]
+					[Hydraulics]
+					[Pneumatics]
+				]
+			]
+			[Disk brakes
+				[Apply pressure to wheels
+					[Servo]
+					[Hydraulics]
+					[Pneumatics]
+					[Electromagnets]
+				]
+			]
+			[Drag based brakes
+				[Increase drag coefficient
+					[Flip panels outward]
+					[Parachute]
+				]
+			]
+			[Regenerative brake system
+				[Change  from regular motor to generator
+					[Servo motor with gears on an axle]
+					[Buying a motor that does it automatically]
+				]
+			]
+		]
+		[Turn relative to ground
+			[Conical wheels
+				[Adjust speed for each wheel to acount for difference in distance travelled
+					[Geometry will account]
+				]
+			]
+			[Flat wheels
+				[Allow for slip
+					[Use material with low coefficient of friction]
+				]
+			]
+			[Slip differential]
+		]
+		[Detect turns
+			[Potentiometer
+				[Actuate potentiometer
+					[Rod that extends out the front]
+				]
+			]
+			[Accelerometer/gyrometer]
+			[Light sensor
+				[Detect rail ties]
+			]
+			[Preset time intervals]
+		]
+		[Move up a hill
+			[High momentum
+				[Quickly accelerate
+					[Lightweight chassis]
+					[Gear ratio]
+				]
+			]
+			[High torque
+				[Increased amounts of friction
+					[Rubberized wheels]
+					[Adhesive]
+				]
+				[Sustain torque
+					[Gear ratio]
+					[Multiple motors]
+				]
+			]
+			[Sticky arms
+				[Move along its length
+					[Ratchet]
+					[Pulley and motor powered]
+				]
+				[Launch arms forward
+					[Crossbow]
+					[Pneumatics]
+					[Explosives]
+					[Slingshot]
+					[Catapult]
+				]
+			]
+			[Contain components
+				[Sit in box]
+				[Drill to plate]
+				[Adhere to plate]
+				[Potting]
+				[Welding]
+			]
+			[Connect to cargo carts
+				[Screws]
+				[Rope/wire]
+				[Links]
+				[Pins]
+				[Glue]
+			]
+			[Stay aligned with rails
+				[Conical wheels]
+				[Wheels with o-rings and flanges]
+				[Tank treads]
+			]
 		]
 	]
-	%\node [above=of f1.west, xshift=6mm] {\textbf{Top Level}};
-	%\node (topleveltitle) [node distance=1mm,above=of f1, xshift=-17mm] {\textbf{Top Level}};
 	\begin{scope}[on background layer]
 		\node [draw=black!60,fill=black!20, fit={\toplevel}] {};
 		\ForEachX{,}{
-			%\node [draw=black!60,fill=black!20, fit={\thislevelitem}] {};
 			\node [draw=black!60,fill=black!20, fit={\csname\thislevelitem\endcsname}] {};
 		}{\subfunctions}
 	\end{scope}
 \end{forest}
-\par lol
-\par lmaopls
-
 \end{document}
