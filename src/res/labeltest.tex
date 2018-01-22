@@ -1,0 +1,100 @@
+\documentclass[tikz, border=5pt]{standalone}
+\usepackage{forest}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp,fixltx2e}
+\usetikzlibrary{arrows.meta,shadows}
+\begin{document}
+
+\forestset{
+  tree node/.style = {
+	  inner sep=2pt,
+	  rounded corners = 2pt,
+	  font=\sffamily,
+	  rectangle,
+	  draw, 
+	  thick, 
+	  fill=white, 
+	  align=center, 
+	  text width=3cm,
+	  drop shadow
+	},
+  placing node/.style={inner sep=0pt, outer sep=0pt, draw=none, skipping path},
+  skipping path/.style={
+    edge path={
+      \noexpand\path [\forestoption{edge}, thick]
+        (!u.parent anchor) -- (.south)\forestoption{edge label};
+    },
+  },
+  /tikz/plan label/.style={font=\sffamily\scriptsize},
+}
+\begin{forest}
+  for tree={
+    parent anchor=south,
+    child anchor=north,
+    l sep+=5pt,
+    edge path={
+      \noexpand\path [-{Stealth[]}, \forestoption{edge}, thick]
+        (!u.parent anchor) -- +(0,-5pt) -| (.child anchor)\forestoption{edge label};
+    },
+  },
+  set root label/.style={
+    content/.wrap 2 pgfmath args={##1. ##2}{n()}{content()},
+    tree node
+  },
+  set node label/.style={
+    content/.wrap 3 pgfmath args={##1.##2 ##3}{n("!r")}{n()}{content()},
+    tree node
+  },
+  set node super label/.style={
+    content/.wrap 4 pgfmath args={##1.##2.##3 ##4}{n("!r")}{n("!uu")}{n()}{content()},
+    tree node
+  },
+  before typesetting nodes={% where contains implicit for tree loop: https://tex.stackexchange.com/a/218995/: Sašo Živanović
+    for tree={
+      if level=0{
+        set root label,
+%       content={O. #1},
+      }{
+        if level=1{
+          set node label,
+        }{
+          if level=3{
+            set node super label,
+          }{
+          },
+        },
+      },
+    },
+  }
+  [Warm up furnace and do other cool shit
+    [Prepare\\plant and\\services
+    [, placing node, label={[plan label]right:Plan 0.1: Do in any order}
+        [Ensure\\plant is\\ready, calign with current
+          [,phantom, tier=bottom]
+        ]
+        [Ensure\\gas-oil is\\available
+        ]
+        [Ensure O\textsubscript{2}\\analysis system\\is working
+        ]
+      ]
+    ]
+    [\\Start air\\blower, edge label={node [plan label, anchor=south east, above left, midway] {Plan 0: Do in order};}
+    ]
+    [\\Start oil\\pump
+    ]
+    [Head\\oil to\\800\textcelsius
+      [, placing node, tier=bottom, label={[plan label]left:Plan 0.4: Raise temperature to 800\textcelsius{} while monitoring O\textsubscript{2} and $\triangle$T}
+        [Increase\\temperature controller\\as per chart
+        ]
+        [\\Monitor\\O\textsubscript{2}
+        ]
+        [\\Monitor\\temperature
+        ]
+        [Switch\\furnace to\\automatic, calign with current
+        ]
+      ]
+    ]
+  ]
+  ;
+\end{forest}
+\end{document}
