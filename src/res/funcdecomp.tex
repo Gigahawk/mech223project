@@ -203,11 +203,6 @@
 					[Pneumatics]
 				]
 			]
-			[High coefficient of friction
-				[Rubber pads]
-				[Sticky pads]
-				[Rough wheels]
-			]
 			[Spike
 				[Force spike into ground
 					[Servo motor]
@@ -238,7 +233,15 @@
 				]
 			]
 		]
-		[Turn relative to ground
+		[Detect turns
+			[Potentiometer]
+			[Accelerometer/gyrometer]
+			[Light sensor]
+			[Preset time intervals]
+			[None
+				[Go slow enough to not need turn detection]
+			]
+		][Turn relative to ground
 			[Conical wheels
 				[Adjust speed for each wheel to acount for difference in distance travelled
 					[Geometry will account]
@@ -250,18 +253,6 @@
 				]
 			]
 			[Slip differential]
-		]
-		[Detect turns
-			[Potentiometer
-				[Actuate potentiometer
-					[Rod that extends out the front]
-				]
-			]
-			[Accelerometer/gyrometer]
-			[Light sensor
-				[Detect rail ties]
-			]
-			[Preset time intervals]
 		]
 		[Move up a hill
 			[High momentum
@@ -293,27 +284,28 @@
 					[Catapult]
 				]
 			]
-			[Contain components
-				[Sit in box]
-				[Drill to plate]
-				[Adhere to plate]
-				[Potting]
-				[Welding]
-			]
-			[Connect to cargo carts
-				[Screws]
-				[Rope/wire]
-				[Links]
-				[Pins]
-				[Glue]
-			]
-			[Stay aligned with rails
-				[Conical wheels]
-				[Wheels with o-rings and flanges]
-				[Tank treads]
-			]
+		]
+		[Contain components
+			[Sit in box]
+			[Drill to plate]
+			[Adhere to plate]
+			[Potting]
+			[Welding]
+		]
+		[Connect to cargo carts
+			[Screws]
+			[Rope/wire]
+			[Links]
+			[Pins]
+			[Glue]
+		]
+		[Stay aligned with rails
+			[Conical wheels]
+			[Wheels with o-rings and flanges]
+			[Tank treads]
 		]
 	]
+	\draw [-Latex,line width=0.7pt] (f3) edge (f4);
 	\begin{scope}[on background layer]
 		\node [draw=black!60,fill=black!20, fit={\toplevel}] {};
 		\ForEachX{,}{
