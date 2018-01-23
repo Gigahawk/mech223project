@@ -118,10 +118,6 @@
 					if n=1{
 						% Add the "Top Level" label to the first function node
 						my label={Top Level},
-						%name/.wrap 4 pgfmath args={f##1c##2sf##3sc##4}{n("!uuu")}{n("!uu")}{n("!u")}{n()},
-%						TeX={
-%							\edef\toplevel{\toplevel (toplevellabel)}
-%						},
 					}{}
 				}{
 					if level=2{
@@ -148,170 +144,23 @@
 		},
 	},
 	[
-		[Accelerate relative to Ground
-			[Motor and Wheels
-				[Transfer energy from motor to wheels
-					[Direct drive]
-					[Gear box]
-					[Belt drive]
-					[Chain drive]
-					[Friction drive]
-					[Fan or propellor]
-				]
-			]
-			[Motor and treads
-				[Transfer energy from motor to treads
-					[Direct drive with belt]
-				]
-			]
-			[Explosion and wheels
-				[Move explosives behind center of mass,
-					[Chute of gunpowder with a servo]
-					[Gravity fed tube]
-					[Small fan]
-				]
-				[Set Off Explosives
-					[Lighter]
-					[Primer with pins]
-					[Arcing electricity]
-				]
-			]
-			[Jet Engine
-				[Hold Fuel
-					[Internal gas tank]
-					[External gas tank]
-				]
-				[Move fuel to engine
-					[Gravity]
-					[Injection]
-					[Difference in air pressure]
-				]
-				[Expel fuel
-					[Fan or propellor]
-					[Air compressor]
-				]
-				[Light fuel
-					[Pilot light]
-					[Arcing electricity]
-				]
-			]
-		]
-		[Decelerate relative to ground
-			[Drum
-				[Apply pressure to wheels
-					[Servo]
-					[Hydraulics]
-					[Pneumatics]
-				]
-			]
-			[Spike
-				[Force spike into ground
-					[Servo motor]
-					[Heavy spike with release latch]
-					[Shoot spike into ground]
-					[Hydraulics]
-					[Pneumatics]
-				]
-			]
-			[Disk brakes
-				[Apply pressure to wheels
-					[Servo]
-					[Hydraulics]
-					[Pneumatics]
-					[Electromagnets]
-				]
-			]
-			[Drag based brakes
-				[Increase drag coefficient
-					[Flip panels outward]
-					[Parachute]
-				]
-			]
-			[Regenerative brake system
-				[Change  from regular motor to generator
-					[Servo motor with gears on an axle]
-					[Buying a motor that does it automatically]
-				]
-			]
-		]
-		[Detect turns
-			[Potentiometer]
-			[Accelerometer/gyrometer]
-			[Light sensor]
-			[Preset time intervals]
-			[None
-				[Go slow enough to not need turn detection]
-			]
-		][Turn relative to ground
-			[Conical wheels
-				[Adjust speed for each wheel to acount for difference in distance travelled
-					[Geometry will account]
-				]
-			]
-			[Flat wheels
-				[Allow for slip
-					[Use material with low coefficient of friction]
-				]
-			]
-			[Slip differential]
-		]
-		[Move up a hill
-			[High momentum
-				[Quickly accelerate
-					[Lightweight chassis]
-					[Gear ratio]
-				]
-			]
-			[High torque
-				[Increased amounts of friction
-					[Rubberized wheels]
-					[Adhesive]
-				]
-				[Sustain torque
-					[Gear ratio]
-					[Multiple motors]
-				]
-			]
-			[Sticky arms
-				[Move along its length
-					[Ratchet]
-					[Pulley and motor powered]
-				]
-				[Launch arms forward
-					[Crossbow]
-					[Pneumatics]
-					[Explosives]
-					[Slingshot]
-					[Catapult]
-				]
-			]
-		]
-		[Contain components
-			[Sit in box]
-			[Drill to plate]
-			[Adhere to plate]
-			[Potting]
-			[Welding]
-		]
-		[Connect to cargo carts
-			[Screws]
-			[Rope/wire]
-			[Links]
-			[Pins]
-			[Glue]
-		]
-		[Stay aligned with rails
-			[Conical wheels]
-			[Wheels with o-rings and flanges]
-			[Tank treads]
-		]
+		[Accelerate relative to Ground]
+		[Decelerate relative to ground]
+		[Detect turns]
+		[Turn relative to ground]
+		[Move up a hill]
+		[Contain components]
+		[Connect to cargo carts]
+		[Stay aligned with rails]
 	]
 	\draw [-Latex,line width=0.7pt] (f3) edge (f4);
 	\begin{scope}[on background layer]
 		\node [draw=black!60,fill=black!20, fit={\toplevel}] {};
-		\ForEachX{,}{
-			\node [draw=black!60,fill=black!20, fit={\csname\thislevelitem\endcsname}] {};
-		}{\subfunctions}
+%		\ifcsname subfunctions\endcsname
+%			\ForEachX{,}{
+%				\node [draw=black!60,fill=black!20, fit={\csname\thislevelitem\endcsname}] {};
+%			}{\subfunctions}
+%		\fi
 	\end{scope}
 \end{forest}
 \end{document}
