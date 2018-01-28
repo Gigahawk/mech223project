@@ -1,0 +1,202 @@
+\documentclass[class=../report, crop=false]{standalone}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\begin{document}
+
+\section{Evaluation}
+
+We began the evaluation process by winnowing our concept fragments based on feasibility, requirements and technical readiness; any concepts containing the eliminated fragments were winnowed immediately.
+Full concepts were ranked using a Pugh Chart.
+The process was repeated with a second datum to ensure accurate ranking.
+We advanced the four best concepts to scoring where we used multiple prototype tests and a WDM to select the best design.
+
+\subsection{Winnowing}
+
+We established our winnowing criteria based on the requirements of the Rail-Rider locomotive.
+We decided to winnow the concept fragments individually to expedite the process due to our time restriction and large number of concepts.
+The independent nature of our concept fragments made this process viable.
+Many of the creative concepts were eliminated due to feasibility issues or requirement violations\footnotemark.
+\footnotetext{See Appendix C: Winnowing Table C1-C9 Concept Fragment Winnowing}
+We winnowed the full concepts and discarded any designs containing the eliminated concept fragments\footnotemark.
+\footnotetext{See Appendix C: Winnowing Table C10-C11 Concept Fragment Winnowing}
+We noticed that some concepts were very similar, so we combined the best features between them to create an improved full concept.
+All remaining concepts were advanced to ranking. 
+
+\subsection{Ranking}
+
+We advanced eight concepts to ranking where we used a Pugh Chart to compare their performance.
+In order to reduce the time spent on ranking, we used qualitative assessments of each design to complete the Pugh Chart.
+Our evaluation method for each criteria is described in Table \ref{table:winnowingcriteria}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l | l}
+		\textbf{Criteria} & \textbf{Qualitative Assessment} \\ \hline
+		Aesthetics & Any remarkable, visual differences \\
+		Energy & Number of electrical components \\
+		Cost & Rough estimate of most expensive parts eg. gear trains and motors (intuition based) \\
+		Acceleration & Torque to mass ratio \\
+		Torque & Number of motors and best gear ratio \\
+		Stability & Based off performance of the type of wheel (Cylindrical vs Conical)\\
+	\end{tabular}
+
+	\caption{Winnowing Criteria Description}
+	\label{table:winnowingcriteria}
+\end{table}
+
+Our Pugh Chart\footnotemark favoured six concepts of the eight evaluated.
+\footnotetext{See Appendix D: Pugh Charts Figure D1}
+We repeated the process using a second datum to test the differences between only the top-performing designs.
+The results of second Pugh Chart\footnotemark showed that four designs were consistently outperforming the others.
+\footnotetext{See Appendix D: Pugh Charts Figure D2}
+We decided to advance only these four concepts to further testing and scoring.
+
+\clearpage
+
+\subsection{Prototype testing}
+
+We conducted several prototype tests to gather enough evidence to properly score the remaining concepts.
+We tested the cornering ability of conical and cylindrical wheels using a qualitative test\footnotemark.
+\footnotetext{See Appendix E: Prototype Tests Table E1}
+The test demonstrated that the conical wheels have greater cornering ability particularly when the chassis has a low centre of gravity.
+We decided to move forward with the conical wheel design.
+
+Our team attempted to maximize the frictional force experienced by the driven wheels on our train; not only would this allow us to pull more cargo, but it would also let us accelerate faster and turn better.
+We tested the coefficient of static friction of PLA filament*, rubber plasti-dip, and elastic bands in order to optimize the friction of our wheels\footnotemark.
+\footnotetext{See Appendix E: Prototype Tests Table E3}
+The elastic bands were chosen over the plasti-dip due to their more durable nature; the plasti-dip wore off after a short amount of testing (Figure \ref{fig:wheelcoating}).
+We also distributed our weight closer to the driven axles; this would serve to further increase frictional force by increasing the normal force on those wheels.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../res/img/wheelcoating}
+	\caption{Wheel Coating Test of Durability}
+	\label{fig:wheelcoating}
+\end{figure}
+
+Our best concepts used a gear or pulley transmission to transfer torque to the wheels.
+We tested the torque output by determining the largest angle each design could climb without stalling.
+We completed calculations\footnotemark comparing a two motor system with a single motor gear train.
+\footnotetext{See Appendix E: Prototype Test Calculation of Dual Drive Torque}
+The results of these tests indicated that a dual driven gear transmission system was the most effective at transferring torque.
+
+The pulley drive system had many issues during testing.
+The distance required to create enough tension for the system to operate spanned over half of our vehicle length which invalidated a variable pulley drive.
+The belt slipping or the motor stalling occured, producing enough heat to soften the PLA and left the pulley susceptible to falling off of the motor’s axle and to rapid wear from the belt (Figure \ref{fig:pulleytest}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../res/img/pulleytest}
+	\caption{Wear on V-shape pulley}
+	\label{fig:pulleytest}
+\end{figure}
+
+Our team opted for the variable gear drive due to the belt drive’s problematic nature.
+Although, the possibility of stalled motors exists in the gear train option, the gear ratio prevents this from happening at smaller angles, making this unlikely during the competition.
+As an added precaution, we fitted grub screws with nuts to better connect the gear to the axle.
+
+We generated a computer simulation of the train going around the track in each round.
+The model (Figure \ref{fig:trainsim}) indicated that the train would continue to increase in speed well above our tipping velocity\footnotemark.
+We decided to create a braking system to solve this problem.
+\footnotetext{See Appendix E: Prototype Tests Track Simulation}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				title={\textbf{Simulation for Round 2}},
+				width=0.8\textwidth,
+				height=0.45\textwidth,
+				grid=major,
+				ytick distance=0.5,
+				xmin=0,
+				xlabel={Position on Track (m)},
+				legend style={
+					at={(1.1,0.5)},
+					anchor=west,
+					nodes={
+						scale=0.8, transform shape
+					}
+				},
+				legend image post style={mark=none}
+			]
+			\addplot table [x=x, y=v, col sep=comma,mark=none]{trainsim.csv};
+			\addplot table [x=x, y=a, col sep=comma,mark=none]{trainsim.csv};
+			\addplot table [x=x, y=tip, col sep=comma,mark=none]{trainsim.csv};
+			\legend{Velocity (m/s), Acceleration (m/s\textsuperscript{2}), Tipping Velocity (m/s)}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Simulation model}
+	\label{fig:trainsim}
+\end{figure}
+
+\clearpage
+
+We tested a photoresistor* to determine its sensitivity to difference in colour changes.
+The photoresistor was accurate at differentiating between the table and track rungs across multiple trials and remained accurate at higher speeds\footnotemark.
+\footnotetext{See Appendix E: Prototype Tests Figure E1: Photoresistor Track Detection Data}
+We implemented this to determine our position on the track and when to begin braking.
+
+\subsection{Weighted Decision Matrix}
+
+Using the results of our prototype tests, we scored our remaining designs in a WDM.
+We evaluated the concepts based on cost, energy, derailment stability, cargo transfer ability, and risk.
+Our complete WDM can be found in Appendix F: Weighted Decision Matrix.
+We determined that the dual drive design, Get Hitched, was the best.
+A summary of the scores is shown in Figure \ref{fig:wdm}.
+
+\pgfplotstableread[col sep=comma]{wdm.csv}{\wdmdata}
+\pgfplotstablegetcolsof{\wdmdata}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				width=0.8\textwidth,
+				height=0.6\textwidth,
+				reverse legend,
+				ybar stacked,
+				bar width=15pt,
+				ymin=0,
+				xtick=data,
+				xticklabels from table={\wdmdata}{concept},
+				ymajorgrids,
+				legend style={
+					at={(1.05,0.5)},
+					anchor=west,
+					nodes={
+						scale=0.8, transform shape
+					}
+				},
+				legend image post style={mark=none}
+			]
+			\addplot table [x expr=\coordindex, y index=1]{\wdmdata};
+			\addplot table [x expr=\coordindex, y index=2]{\wdmdata};
+			\addplot table [x expr=\coordindex, y index=3]{\wdmdata};
+			\addplot table [x expr=\coordindex, y index=4]{\wdmdata};
+			\addplot +[
+				point meta=y,
+				nodes near coords,
+				every node near coord/.append style={
+					black,
+					fill=white,
+					fill opacity=0.75,
+					text opacity=1,
+					outer sep=\pgflinewidth,
+				}
+			]table [x expr=\coordindex, y index=5]{\wdmdata};
+			\legend{Competition Cost, Energy, Derailment Stability, Cargo Transfer Ability,Risk}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Simulation model}
+	\label{fig:wdm}
+\end{figure}
+
+Limitations in space made producing two gear trains with sufficient gear ratios very difficult.
+We combined Puff with Get Hitched to create a design with a singular gear transmission driven by two motors.
+We could therefore utilize the positive aspects of the variable gear train as well as the strong attributes of Get Hitched.
+
+\end{document}

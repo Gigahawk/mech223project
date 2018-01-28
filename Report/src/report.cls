@@ -2,25 +2,26 @@
 \LoadClassWithOptions{article}
 
 %% Begin dependencies
-%\usepackage{sectsty}
+\usepackage{sectsty}
 %% Make sections sansserif
 %\allsectionsfont{\normalfont\sffamily\bfseries}
 %
 \usepackage{titlesec}
-%\usepackage{graphicx}
-%\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
 %
 %\usepackage[round]{natbib}
 %\bibliographystyle{apalike}
 %
-%\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{titling}
 %
-%\usepackage{acro}
-%% \acsetup{first-style=long}
+\usepackage{acro}
+% \acsetup{first-style=long}
 %
 %% Allow acronyms to be a separate file
-%\usepackage{verbatim}
+\usepackage{verbatim}
 %
 \usepackage{geometry}
 % Set the Paper Size and margins
@@ -34,9 +35,9 @@
 %% Make table rows spaced apart
 %\renewcommand{\arraystretch}{1.5}
 
-%\usepackage{fancyhdr}
-%% \setlength{\headheight}{15.2pt}
-%\pagestyle{fancyplain}
+\usepackage{fancyhdr}
+% \setlength{\headheight}{15.2pt}
+\pagestyle{fancyplain}
 %
 %\usepackage{tikz}
 %\usetikzlibrary{arrows,shapes} 
@@ -46,15 +47,17 @@
 
 \usepackage{forarray}
 
-%\setlength{\parskip}{10pt}
+\setlength{\parskip}{10pt}
 
-%\fancypagestyle{empty}{
-% \fancyhf{}
-% \fancyhead[L]{\therunningheader}
-%}
-%\renewcommand{\headrulewidth}{0pt}
-%\lhead{\therunningheader}
-%\rhead{}
+\def\therunningheader{}
+
+\fancypagestyle{empty}{
+ \fancyhf{}
+ \fancyhead[L]{\therunningheader}
+}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{\therunningheader}
+\rhead{}
 
 % Prevent hyphenation
 %\raggedright
@@ -64,15 +67,15 @@
 %\raggedbottom
 
 % Make captions centered
-%\captionsetup{justification=centering,margin=2cm}
+\captionsetup{justification=centering,margin=2cm}
 
 % Remove small abstract title
-%\patchcmd{\abstract}{\small}{\Large}{}{}
+\patchcmd{\abstract}{\small}{\Large}{}{}
 
 % Begin new commands
-%\newcommand{\runningheader}[1]{
-%	\def\therunningheader{#1}
-%}
+\newcommand{\runningheader}[1]{
+	\def\therunningheader{#1}
+}
 \newcommand{\for}[1]{
 	\def\thefor{#1}
 }
@@ -113,15 +116,15 @@
 	\end{titlepage}
 }
 
-%\renewenvironment{abstract}{
-%	\begin{center}
-%		{\Large\sffamily\bfseries Abstract \par}
-%	\end{center}
-%	\noindent
-%	\normalfont
-%	\begin{changemargin}{0.5in}
-%
-%}{\end{changemargin}}
+\renewenvironment{abstract}{
+	\begin{center}
+		{\Large\sffamily\bfseries Abstract \par}
+	\end{center}
+	\noindent
+	\normalfont
+	\begin{changemargin}{0.5in}
+
+}{\end{changemargin}}
 
 % Allow footnotes without marker
 %\newcommand\blfootnote[1]{%
