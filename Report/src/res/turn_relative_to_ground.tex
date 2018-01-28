@@ -4,7 +4,12 @@
 \usepackage{textcomp,fixltx2e}
 \usepackage{alphalph}
 \usepackage{forarray}
+\usepackage{l3regex}
+\usepackage{xparse}
 \usetikzlibrary{fit,calc,shapes,positioning,scopes,backgrounds,arrows,arrows.meta}
+
+% Number assigned to the first top level function
+\def\starton{3}
 \begin{document}
 
 \forestset{
@@ -66,20 +71,19 @@
 		draw=none,
 		fill=none
 	},
-	%MANUALLY SET F NUMBER
 	set function/.style={
-		content/.wrap 2 pgfmath args={\textbf{F3} ##2}{n()}{content()},
+		content/.wrap 2 pgfmath args={\textbf{F##1} ##2}{int(n()+\starton-1)}{content()},
 		name/.wrap pgfmath arg={f##1}{n()},
 		s sep=1cm,
 		tree node
 	},
 	set concept/.style={
-		content/.wrap 3 pgfmath args={\textbf{C3\alphalph{##2}} ##3}{n("!u")}{n()}{content()},
+		content/.wrap 3 pgfmath args={\textbf{C##1\alphalph{##2}} ##3}{int(n("!u")+\starton-1)}{n()}{content()},
 		name/.wrap 2 pgfmath args={f##1c##2}{n("!u")}{n()},
 		tree node
 	},
 	set subfunction/.style n args={3}{
-		content/.wrap 2 pgfmath args={\textbf{sF##1} ##2}{n()}{content()},
+		content/.wrap 2 pgfmath args={\textbf{sF##1} ##2}{int(n()+\starton-1)}{content()},
 		name/.wrap 3 pgfmath args={f##1c##2sf##3}{n("!uu")}{n("!u")}{n()},
 		TeX={
 			\makesubfunc{f\alphalph{#1}c\alphalph{#2}}{(f#1c#2sf#3)}
@@ -97,9 +101,8 @@
 	my label/.style={
  	  	label={[align=left,text width=4cm,yshift=0.1cm] {\textbf{#1}}},
 	},
-	% MANUALLY CHANGE SFLABEL
 	my sflabel/.style n args={2}{
-		label={[align=left,text width=4cm,yshift=0.1cm] {\textbf{Sub-Functions (C3\alphalph{#2})}}},
+		label={[align=left,text width=4cm,yshift=0.1cm] {\textbf{Sub-Functions (C#1\alphalph{#2})}}},
 	},
 	before typesetting nodes={
 		for tree={
@@ -119,8 +122,8 @@
 					},
 					if n=1{
 						% Add the "Top Level" label to the first function node
-						%MAKE TOP LABEL BLANK
-						my label={},
+						% Don't add top label for smaller view
+						%my label={Top Level},
 						%name/.wrap 4 pgfmath args={f##1c##2sf##3sc##4}{n("!uuu")}{n("!uu")}{n("!u")}{n()},
 %						TeX={
 %							\edef\toplevel{\toplevel (toplevellabel)}
@@ -137,7 +140,7 @@
 						if level=3{
 							set subfunction/.process={PPP}{n("!uu")}{n("!u")}{n()},
 							if n=1{
-								my sflabel/.process={PP}{n("!uu")}{n("!u")},
+								my sflabel/.process={PP}{int(n("!uu")+\starton-1)}{n("!u")},
 							}{},
 						}{
 							if level=4{
