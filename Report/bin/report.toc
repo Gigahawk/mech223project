@@ -1,0 +1,40 @@
+\contentsline {section}{List of Figures}{iv}{Doc-Start}
+\contentsline {section}{List of Tables}{v}{Doc-Start}
+\contentsline {section}{Abstract}{vii}{Doc-Start}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Strategy}{2}{section.2}
+\contentsline {section}{\numberline {3}Functional Decomposition}{3}{section.3}
+\contentsline {section}{\numberline {4}Conceptual Solutions}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Creative Concepts}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Promising Concepts}{7}{subsection.4.2}
+\contentsline {section}{\numberline {5}Evaluation}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}Winnowing}{10}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Ranking}{10}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Prototype testing}{11}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Weighted Decision Matrix}{13}{subsection.5.4}
+\contentsline {section}{\numberline {6}Final Prototype and Competition Results}{14}{section.6}
+\contentsline {subsection}{\numberline {6.1}Final Prototype}{14}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Competition Performance}{15}{subsection.6.2}
+\contentsline {section}{\numberline {7}Recommendations}{16}{section.7}
+\contentsline {section}{\numberline {8}Conclusion}{17}{section.8}
+\contentsline {section}{\numberline {9}References}{19}{section.9}
+\contentsline {section}{Appendix \numberline {A}Functional Decomposition Diagram}{20}{Appendix.1.A}
+\contentsline {section}{Appendix \numberline {B}Concepts Generated}{25}{Appendix.1.B}
+\contentsline {section}{Appendix \numberline {C}Winnowing}{38}{Appendix.1.C}
+\contentsline {section}{Appendix \numberline {D}Pugh Charts}{47}{Appendix.1.D}
+\contentsline {section}{Appendix \numberline {E}Prototype Tests}{50}{Appendix.1.E}
+\contentsline {subsection}{\numberline {E.1}Feasibility Calculation for Fan Propulsion}{50}{subsection.1.E.1}
+\contentsline {subsection}{\numberline {E.2}Wheel Testing}{51}{subsection.1.E.2}
+\contentsline {subsection}{\numberline {E.3}Calculation of Dual Drive Torque}{51}{subsection.1.E.3}
+\contentsline {subsection}{\numberline {E.4}Calculation of Prototype Torque}{52}{subsection.1.E.4}
+\contentsline {subsection}{\numberline {E.5}Frictional Data Test}{52}{subsection.1.E.5}
+\contentsline {subsection}{\numberline {E.6}Light Sensor Test}{53}{subsection.1.E.6}
+\contentsline {subsection}{\numberline {E.7}Track Simulation}{54}{subsection.1.E.7}
+\contentsline {section}{Appendix \numberline {F}Weighted Decision Matrix}{55}{Appendix.1.F}
+\contentsline {section}{Appendix \numberline {G}Preliminary Cost Estimates}{56}{Appendix.1.G}
+\contentsline {subsection}{\numberline {G.1}Puff}{56}{subsection.1.G.1}
+\contentsline {subsection}{\numberline {G.2}Get Hitched}{56}{subsection.1.G.2}
+\contentsline {subsection}{\numberline {G.3}Pump Chump}{57}{subsection.1.G.3}
+\contentsline {subsection}{\numberline {G.4}Simplicity}{57}{subsection.1.G.4}
+\contentsline {section}{Appendix \numberline {H}Final Prototype Details}{58}{Appendix.1.H}
+\contentsline {section}{Appendix \numberline {I}Bill of Materials}{59}{Appendix.1.I}

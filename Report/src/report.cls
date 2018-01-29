@@ -118,7 +118,7 @@
 
 \renewenvironment{abstract}{
 	\begin{center}
-		{\Large\sffamily\bfseries Abstract \par}
+		{\Large\bfseries Abstract \par}
 	\end{center}
 	\noindent
 	\normalfont

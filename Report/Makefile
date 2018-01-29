@@ -1,16 +1,19 @@
 SOURCEDIR = src
 BUILDDIR = bin
 RESDIR = res
+APPENDDIR = appendices
 SECTIONDIR = sections
 TEMPDIR = temp
 
 all:
-	latexmk -pdf -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(RESDIR)/*.tex
-	latexmk -pdf -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/*.tex
-	latexmk -pdf -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/*.tex
-	latexmk -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(RESDIR)/*.tex
-	latexmk -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/*.tex
-	latexmk -c -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/*.tex
+	latexmk -f -pdf -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(RESDIR)/*.tex
+#	latexmk -f -pdf -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/*.tex
+#	latexmk -f -pdf -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/$(APPENDDIR)/*.tex
+	latexmk -f -pdf -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/*.tex
+#	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(RESDIR)/*.tex
+#	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/*.tex
+#	latexmk -f -c -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/*.tex
+#	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/$(APPENDDIR)/*.tex
 
 clean:
 	rm -rf $(BUILDDIR)/*

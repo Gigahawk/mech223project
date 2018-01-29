@@ -1,0 +1,122 @@
+\documentclass[class=../../report, crop=false]{standalone}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\build}[1]{
+	\cellcolor{blue!25}#1
+}
+\newcommand{\weight}[1]{
+	\cellcolor{blue!10}#1
+}
+\newcommand{\cost}[1]{
+	\cellcolor{green!10}#1
+}
+\newcommand{\total}[1]{
+	\cellcolor{green!25}#1
+}
+
+\begin{document}
+
+\section{Preliminary Cost Estimates} \label{app:costestimates}
+
+\subsection{Puff}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| l | l | l|}
+		\hline
+		\textbf{Component} & \textbf{Weight(g)} & \textbf{Price (\$)}\\ \hline
+		Motor					& \weight{42}	& \cost{3}		\\ \hline
+		Battery container		& \weight{50}	& \cost{3}		\\ \hline
+		Wheels					& \weight{28}	& \cost{1.12}	\\ \hline
+		Chassis					& \weight{185}	& \cost{7.40}	\\ \hline
+		Axles					& \weight{16}	& \cost{0.64}	\\ \hline
+		Servos					& \weight{50}	& \cost{10}		\\ \hline
+		Arduino					& \weight{10}	& \cost{27}		\\ \hline
+		Arduino battery			& \weight{25}	& \cost{11}		\\ \hline
+		Brakes					& \weight{0}	& \cost{5}		\\ \hline
+		Transmission			& \weight{50}	& \cost{0.75}	\\ \hline
+		Differential			& \weight{n/a}	& \cost{n/a}	\\ \hline
+		Miscallaneous			& \weight{50}	& \cost{10}		\\ \hline
+		Turn detection device	& \weight{50}	& \cost{2}		\\ \hline
+		\total{\textbf{Total}} 	& \total{556}	& \total{80.91}	\\ \hline
+	\end{tabular}
+	\caption{Cost and weight of Puff}
+\end{table}
+
+\subsection{Get Hitched}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| l | l | l|}
+		\hline
+		\textbf{Component} & \textbf{Weight(g)} & \textbf{Price (\$)}\\ \hline
+		Motor					& \weight{42}	& \cost{6}		\\ \hline
+		Battery container		& \weight{50}	& \cost{3}		\\ \hline
+		Wheels					& \weight{28}	& \cost{1.12}	\\ \hline
+		Chassis					& \weight{185}	& \cost{7.40}	\\ \hline
+		Axles					& \weight{16}	& \cost{0.87}	\\ \hline
+		Servos					& \weight{50}	& \cost{10}		\\ \hline
+		Arduino					& \weight{10}	& \cost{27}		\\ \hline
+		Arduino battery			& \weight{25}	& \cost{11}		\\ \hline
+		Brakes					& \weight{0}	& \cost{5}		\\ \hline
+		Transmission			& \weight{50}	& \cost{0.75}	\\ \hline
+		Differential			& \weight{n/a}	& \cost{n/a}	\\ \hline
+		Miscallaneous			& \weight{50}	& \cost{10}		\\ \hline
+		Turn detection device	& \weight{50}	& \cost{8.50}		\\ \hline
+		\total{\textbf{Total}} 	& \total{556}	& \total{90.64}	\\ \hline
+	\end{tabular}
+	\caption{Cost and weight of Get Hitched}
+\end{table}
+
+\subsection{Pump Chump}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| l | l | l|}
+		\hline
+		\textbf{Component} & \textbf{Weight(g)} & \textbf{Price (\$)}\\ \hline
+		Motor					& \weight{42}	& \cost{3}		\\ \hline
+		Battery container		& \weight{50}	& \cost{3}		\\ \hline
+		Wheels					& \weight{28}	& \cost{1.12}	\\ \hline
+		Chassis					& \weight{185}	& \cost{7.40}	\\ \hline
+		Axles					& \weight{16}	& \cost{0.87}	\\ \hline
+		Servos					& \weight{50}	& \cost{10}		\\ \hline
+		Arduino					& \weight{10}	& \cost{27}		\\ \hline
+		Arduino battery			& \weight{25}	& \cost{11}		\\ \hline
+		Brakes					& \weight{0}	& \cost{5}		\\ \hline
+		Transmission			& \weight{50}	& \cost{0.75}	\\ \hline
+		Differential			& \weight{n/a}	& \cost{n/a}	\\ \hline
+		Miscallaneous			& \weight{50}	& \cost{10}		\\ \hline
+		Turn detection device	& \weight{50}	& \cost{6}		\\ \hline
+		\total{\textbf{Total}} 	& \total{556}	& \total{85.14}	\\ \hline
+	\end{tabular}
+	\caption{Cost and weight of Pump Chump}
+\end{table}
+
+\subsection{Simplicity}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| l | l | l|}
+		\hline
+		\textbf{Component} & \textbf{Weight(g)} & \textbf{Price (\$)}\\ \hline
+		Motor					& \weight{42}	& \cost{3}		\\ \hline
+		Battery container		& \weight{50}	& \cost{3}		\\ \hline
+		Wheels					& \weight{28}	& \cost{1.12}	\\ \hline
+		Chassis					& \weight{185}	& \cost{7.40}	\\ \hline
+		Axles					& \weight{16}	& \cost{0.87}	\\ \hline
+		Servos					& \weight{50}	& \cost{10}		\\ \hline
+		Arduino					& \weight{10}	& \cost{27}		\\ \hline
+		Arduino battery			& \weight{25}	& \cost{11}		\\ \hline
+		Brakes					& \weight{0}	& \cost{5}		\\ \hline
+		Transmission			& \weight{50}	& \cost{0.75}	\\ \hline
+		Differential			& \weight{n/a}	& \cost{n/a}	\\ \hline
+		Miscallaneous			& \weight{50}	& \cost{10}		\\ \hline
+		Turn detection device	& \weight{50}	& \cost{0}		\\ \hline
+		\total{\textbf{Total}} 	& \total{556}	& \total{79.14}	\\ \hline
+	\end{tabular}
+	\caption{Cost and weight of Pump Chump}
+\end{table}
+
+\end{document}

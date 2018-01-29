@@ -1,0 +1,399 @@
+\documentclass[class=../../report, crop=false]{standalone}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\concept}[1]{
+	\cellcolor{blue!10}#1
+}
+\newcommand{\pass}{
+	\cellcolor{green!10}y
+}
+\newcommand{\fail}{
+	\cellcolor{red!10}n
+}
+\newcommand{\Pass}{
+	\cellcolor{green!25}YES
+}
+\newcommand{\Fail}{
+	\cellcolor{red!25}NO
+}
+
+\begin{document}
+
+\section{Winnowing} \label{app:winnowing}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | }
+		\hline
+		\textbf{Concept Fragments} & \concept{Jet engine} & \concept{Fan/propellor} & \concept{Friction drive} \\ \hline
+		\textbf{Feasibility} & \fail & \fail & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y  Y  Y  Y  }
+		\textbf{Requirements} & & & \\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | }
+		\hline 
+		Only use DC motor for driving & \fail & & \pass \\ \hline
+		Pass Fragment? & \Fail & \Fail & \Pass \\ \hline
+		Justification & Must use DC Motor & See calculations ASDFCHANGE & \\ \hline
+	\end{tabularx}
+
+	\caption{Turn Energy into Mechanical Energy Winnowing}
+
+	\label{app/table:energytomech}
+\end{table}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept Fragments:} & \concept{Direct drive} & \concept{Gearbox} & \concept{Belt drive} & \concept{Chain drive} & \concept{Friction Drive} \\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y Y }
+		\textbf{Requirements} & & & & &\\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline 
+		Only use DC motor for driving & \pass & \pass & \pass & \pass & \pass \\ \hline
+		No hazardous/ prohibited materials & \pass & \pass & \pass & \pass & \pass \\ \hline
+		Only contact rails & \pass & \pass & \pass & \pass & \pass \\ \hline
+		Must stay the same dimensions & \pass & \pass & \pass & \pass & \pass \\ \hline
+		Battery supply $<$9.5V & \pass & \pass & \pass & \pass & \pass \\ \hline
+		Drive system must use provided batteries & \pass & \pass & \pass & \pass & \pass \\ \hline
+		Only electrical sources of batteries & \pass & \pass & \pass & \pass & \pass \\ \hline
+		\textbf{Technical Readiness} & \pass & \pass & \pass & \fail & \pass \\ \hline
+		Pass Fragment? & \Pass & \Pass & \Pass & \Fail & \Pass \\ \hline
+		Justification & & & & Couldn't source; too difficult to manufacture in house &  \\ \hline
+	\end{tabularx}
+
+	\caption{Transfer Energy from Motor to Wheels Winnowing}
+
+	\label{app/table:energytowheels}
+\end{table}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept Fragments:} & \concept{Drum brake} & \concept{Caliper brakes} & \concept{Disc brakes} & \concept{Electrical brakes} & \concept{Air Brakes} \\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y Y }
+		\textbf{Requirements} & & & & &\\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline 
+		No hazardous/ prohibited materials & \pass & \pass & \pass & \pass & \pass \\ \hline
+		Only contact rails & \pass & \pass & \pass & \pass & \pass \\ \hline
+		No affixing to track& \pass & \pass & \pass & \pass & \pass \\ \hline
+		No tethered or launched materials& \pass & \pass & \pass & \pass & \pass \\ \hline
+		Must stay the same dimensions & \pass & \pass & \pass & \pass & \fail \\ \hline
+		Battery supply $<$9.5V & \pass & \pass & \pass & \pass & \\ \hline
+		Drive system must use provided batteries & \pass & \pass & \pass & \pass & \\ \hline
+		Only electrical sources of batteries & \pass & \pass & \pass & \pass & \\ \hline
+		\textbf{Technical Readiness} & \pass & \pass & \pass & \pass & \\ \hline
+		Pass Fragment? & \Pass & \Pass & \Pass & \Pass & \Fail \\ \hline
+		Justification & & & & & The train must stay the same size  \\ \hline
+	\end{tabularx}
+
+	\caption{Control Speed Winnowing}
+
+	\label{app/table:controlspeed}
+\end{table}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\clearpage
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept Fragments:} & \concept{Potentiometer} & \concept{Gyroscope \& accelerometer} & \concept{Light sensor} & \concept{Time based} & \concept{None} \\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \fail & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y Y }
+		\textbf{Requirements} & & & & &\\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline 
+		No hazardous/ prohibited materials 			& \pass & \pass & \pass & & \pass \\ \hline
+		Must be autonomous							& \pass & \pass & \pass & & \pass \\ \hline
+		Battery supply $<$9.5V 						& \pass & \pass & \pass & & \pass \\ \hline
+		Only electrical sources of batteries 		& \pass & \pass & \pass & & \pass \\ \hline
+		\textbf{Technical Readiness} 				& \pass & \pass & \pass & & \pass\\ \hline
+		Pass Fragment? 								& \Pass & \Pass & \Pass & \Fail & \Pass \\ \hline
+		Justification 								& & & & This would be an incredibly unreliable way of detecting turns because there is no feedback &\\ \hline
+	\end{tabularx}
+
+	\caption{Detect Turns Winnowing}
+
+	\label{app/table:detectturns}
+\end{table}
+
+\clearpage
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | }
+		\hline
+		\textbf{Concept Fragments:} & \concept{Conical wheels} & \concept{Slip} & \concept{Slip differential} & \concept{Heavily segmented locomotive}\\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y  }
+		\textbf{Requirements} & & & & \\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | }
+		\hline 
+		No hazardous/ prohibited materials 			& \pass & \pass & \pass & \pass \\ \hline
+		Only contact rails 							& \pass & \pass & \pass & \pass \\ \hline
+		No affixing to track		 				& \pass & \pass & \pass & \pass \\ \hline
+		No tethered or launched materials 			& \pass & \pass & \pass & \pass \\ \hline
+		Must stay the same dimensions 				& \pass & \pass & \pass & \pass \\ \hline
+		Take 24in (radius) corners 					& \pass & \pass & \pass & \pass \\ \hline
+		\textbf{Technical Readiness} 				& \pass & \pass & \pass & \pass \\ \hline
+		Pass Fragment? 								& \Pass & \Pass & \Pass & \Pass \\ \hline
+	\end{tabularx}
+
+	\caption{Turn Relative to Ground Winnowing}
+
+	\label{app/table:turntoground}
+\end{table}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | }
+		\hline
+		\textbf{Concept Fragments:} & \concept{High Torque} & \concept{Sticky arms} & \concept{Spike} & \concept{High momentum}\\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y  }
+		\textbf{Requirements} & & & & \\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | }
+		\hline 
+		No hazardous/ prohibited materials 			& \pass & \pass & \pass & \pass \\ \hline
+		Only contact rails 							& \pass & \fail & \fail & \pass \\ \hline
+		No affixing to track		 				& \pass &  &  & \pass \\ \hline
+		Must be autonomous	 						& \pass &  &  & \pass \\ \hline
+		No tethered or launched materials 		& \pass &  &  & \pass \\ \hline
+		\textbf{Technical Readiness} 				& \pass &  &  & \pass \\ \hline
+		Pass Fragment? 								& \Pass & \Fail & \Fail & \Pass \\ \hline
+		Justification								& & It would be almost impossible to ensure that the sticky arms only contacted the rails & Spike would be in contact with track ties & \\ \hline
+	\end{tabularx}
+
+	\caption{Move Up Steep Inclines Winnowing}
+
+	\label{app/table:moveupincline}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | }
+		\hline
+		\textbf{Concept Fragments} & \concept{Conical wheels} & \concept{Wheels with o-ring} & \concept{Tank treads} \\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y  Y  Y  Y  }
+		\textbf{Requirements} & & & \\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | }
+		\hline 
+		Only contact rails			 	& \pass & \pass & \pass \\ \hline
+		No affixing to track		 	& \pass & \pass & \pass \\ \hline
+		Take 24in (radius) corners	 	& \pass & \pass & \fail \\ \hline
+		\textbf{Technical Readiness}	& \pass & \pass & \\ \hline
+		Pass Fragment? 					& \Pass & \Pass & \Fail \\ \hline
+		Justification 					& & & The tank treads would not be able to stay on the tracks and still take the turn \\ \hline
+	\end{tabularx}
+
+	\caption{Stay Aligned with Rails Winnowing}
+
+	\label{app/table:stayaligned}
+\end{table}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept Fragments:} & \concept{Box chassis} & \concept{Drill to plate} & \concept{Adhere to plate} & \concept{Potting} & \concept{Gingerbread} \\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y Y }
+		\textbf{Requirements} & & & & &\\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline 
+		No hazardous/ prohibited materials & \pass & \pass & \pass & \pass & \pass \\ \hline
+		\textbf{Technical Readiness} & \pass & \pass & \pass & \pass & \\ \hline
+		Pass Fragment? & \Pass & \Pass & \Pass & \Pass & \Pass \\ \hline
+	\end{tabularx}
+
+	\caption{Attach Components to Locomotive Winnowing}
+
+	\label{app/table:attachcomponents}
+\end{table}
+\clearpage
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept Fragments:} & \concept{Screw} & \concept{Rope} & \concept{Link} & \concept{Pin} & \concept{Glue} & \concept{Clip} \\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y Y Y }
+		\textbf{Requirements} & & & & &\\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y | Y |}
+		\hline 
+		No hazardous/ prohibited materials & \pass & \pass & \pass & \pass & \fail & \pass \\ \hline
+		Connect to cargo cart & \pass & \pass & \pass & \pass & & \pass \\ \hline
+		\textbf{Technical Readiness} & \pass & \pass & \pass &  & \pass & \pass \\ \hline
+		Pass Fragment? & \Pass & \Pass & \Pass & \Pass & \Fail & \Pass \\ \hline
+		Justification & & & & & The glue would damage the connection, and would not be removable & \\ \hline
+	\end{tabularx}
+
+	\caption{Connect to Carts Winnowing\protect\footnotemark}
+
+	\label{app/table:connectcart}
+\end{table}
+\footnotetext{None of these concept fragments were implemented as a connection was supplied by the instructors}
+\clearpage
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept:} & \concept{Tanky Train} & \concept{Get Hitched} & \concept{Pump Chump} & \concept{Puff} & \concept{Simplicity} \\ \hline
+		\textbf{Brought Forward} & \fail & \pass & \pass & \pass & \pass \\ \hline
+		\textbf{Feasibility} &  & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y Y  }
+		\textbf{Requirements} & & & & \\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y | Y |}
+		\hline 
+		Max 6in tall										& & \pass & \pass & \pass & \pass  \\ \hline
+		Max 8in wide										& & \pass & \pass & \pass & \pass  \\ \hline
+		Accomodate rail width 3.51mm						& & \pass & \pass & \pass & \pass  \\ \hline
+		Only use DC motor for driving force					& & \pass & \pass & \pass & \pass  \\ \hline
+		No hazardous/ prohibited materials					& & \pass & \pass & \pass & \pass  \\ \hline
+		Only contact rails									& & \pass & \pass & \pass & \pass  \\ \hline
+		No affixing to track								& & \pass & \pass & \pass & \pass  \\ \hline
+		Must be autonomous									& & \pass & \pass & \pass & \pass  \\ \hline
+		No tethered or launched materials					& & \pass & \pass & \pass & \pass  \\ \hline
+		Must have height between 0.5in and 2.5in for 0.1s	& & \pass & \pass & \pass & \pass  \\ \hline
+		Must stay the same dimensions						& & \pass & \pass & \pass & \pass  \\ \hline
+		Battery supply $<$9.5V								& & \pass & \pass & \pass & \pass  \\ \hline
+		take 24in corners									& & \pass & \pass & \pass & \pass  \\ \hline
+		Connect to cargo cart								& & \pass & \pass & \pass & \pass  \\ \hline
+		\textbf{Technical readiness}						& & \pass & \pass & \pass & \pass  \\ \hline
+		Pass Concept?										&\Fail & \Pass & \Pass & \Pass & \Pass  \\ \hline
+		Justification										& Concept fragment already winnowed& & & & \\ \hline
+	\end{tabularx}
+
+	\caption{Concept Winnowing Part 1}
+
+	\label{app/table:concwinnow1}
+\end{table}
+
+\clearpage
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept:} & \concept{Complexity} & \concept{The Very Hungry Caterpillar} & \concept{Propulsion Driven Locomotive} & \concept{Bless You} \\ \hline
+		\textbf{Brought Forward} & \pass & \pass & \fail & \pass \\ \hline
+		\textbf{Feasibility} & \pass & \pass & & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y  }
+		\textbf{Requirements} & & & &  \\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y |}
+		\hline 
+		Max 6in tall										&\pass & \pass &  & \pass  \\ \hline
+		Max 8in wide										&\pass & \pass &  & \pass  \\ \hline
+		Accomodate rail width 3.51mm						&\pass & \pass &  & \pass  \\ \hline
+		Only use DC motor for driving force					&\pass & \pass &  & \pass  \\ \hline
+		No hazardous/ prohibited materials					&\pass & \pass &  & \pass  \\ \hline
+		Only contact rails									&\pass & \pass &  & \pass  \\ \hline
+		No affixing to track								&\pass & \pass &  & \pass  \\ \hline
+		Must be autonomous									&\pass & \pass &  & \pass  \\ \hline
+		No tethered or launched materials					&\pass & \pass &  & \pass  \\ \hline
+		Must have height between 0.5in and 2.5in for 0.1s	&\pass & \pass &  & \pass  \\ \hline
+		Must stay the same dimensions						&\pass & \pass &  & \pass  \\ \hline
+		Battery supply $<$9.5V								&\pass & \pass &  & \pass  \\ \hline
+		take 24in corners									&\pass & \pass &  & \pass  \\ \hline
+		Connect to cargo cart								&\pass & \pass &  & \pass  \\ \hline
+		\textbf{Technical readiness}						&\pass & \pass &  & \pass  \\ \hline
+		Pass Concept?										&\Pass & \Pass & \Fail & \Pass \\ \hline
+		Justification										&  & & Concept fragment already winnowed&  \\ \hline
+	\end{tabularx}
+
+	\caption{Concept Winnowing Part 2}
+
+	\label{app/table:concwinnow2}
+\end{table}
+
+\clearpage
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y |}
+		\hline
+		\textbf{Concept:} & \concept{Too Many Gears} & \concept{The Design Cycler} & \concept{Back to the Grind} & \concept{Complex Bless You} \\ \hline
+		\textbf{Brought Forward} & \pass & \pass & \pass & \pass \\ \hline
+		\textbf{Feasibility} & \pass & \pass & \pass & \pass \\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{ Y Y Y Y Y  }
+		\textbf{Requirements} & & & &  \\ 
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{| Y | Y | Y | Y | Y |}
+		\hline 
+		Max 6in tall										&\pass & \pass & \pass  & \pass  \\ \hline
+		Max 8in wide										&\pass & \pass & \pass  & \pass  \\ \hline
+		Accomodate rail width 3.51mm						&\pass & \pass & \pass  & \pass  \\ \hline
+		Only use DC motor for driving force					&\pass & \pass & \pass  & \pass  \\ \hline
+		No hazardous/ prohibited materials					&\pass & \pass & \pass  & \pass  \\ \hline
+		Only contact rails									&\pass & \pass & \pass  & \pass  \\ \hline
+		No affixing to track								&\pass & \pass & \pass  & \pass  \\ \hline
+		Must be autonomous									&\pass & \pass & \pass  & \pass  \\ \hline
+		No tethered or launched materials					&\pass & \pass & \pass  & \pass  \\ \hline
+		Must have height between 0.5in and 2.5in for 0.1s	&\pass & \pass & \pass  & \pass  \\ \hline
+		Must stay the same dimensions						&\pass & \pass & \pass  & \pass  \\ \hline
+		Battery supply $<$9.5V								&\pass & \pass & \pass  & \pass  \\ \hline
+		take 24in corners									&\pass & \pass & \pass  & \pass  \\ \hline
+		Connect to cargo cart								&\pass & \pass & \pass  & \pass  \\ \hline
+		Pass Concept?										&\Pass & \Pass & \Pass  & \Pass   \\ \hline
+		\textbf{Technical readiness}						&\pass & \pass & \pass  & \pass  \\ \hline
+	\end{tabularx}
+
+	\caption{Concept Winnowing Part 3}
+
+	\label{app/table:concwinnow3}
+\end{table}
+
+
+
+
+\end{document}
