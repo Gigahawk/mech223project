@@ -4,7 +4,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{List of Tables}{v}{Doc-Start}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Abstract}{vi}{Doc-Start}
+\contentsline {section}{Abstract}{1}{Doc-Start}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \defcounter {refsection}{0}\relax 
@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.1}Winnowing}{10}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Ranking}{10}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Ranking}{11}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3}Prototype testing}{12}{subsection.5.3}
 \defcounter {refsection}{0}\relax 
@@ -32,13 +32,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1}Final Prototype}{16}{subsection.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Competition Performance}{18}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.2}Competition Performance}{17}{subsection.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Recommendations}{19}{section.7}
+\contentsline {section}{\numberline {7}Recommendations}{18}{section.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Conclusion}{21}{section.8}
+\contentsline {section}{\numberline {8}Conclusion}{20}{section.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}References}{23}{section.9}
+\contentsline {section}{\numberline {9}Glossary}{21}{section.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10}References}{23}{section.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Appendix \numberline {A}Functional Decomposition Diagram}{24}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
@@ -46,36 +48,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Appendix \numberline {C}Winnowing}{42}{Appendix.1.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {D}Pugh Charts}{58}{Appendix.1.D}
+\contentsline {subsection}{\numberline {C.1}Concept Fragments}{42}{subsection.1.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {E}Prototype Tests}{62}{Appendix.1.E}
+\contentsline {subsection}{\numberline {C.2}Whole Concepts}{51}{subsection.1.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {E.1}Feasibility Calculation for Fan Propulsion}{62}{subsection.1.E.1}
+\contentsline {section}{Appendix \numberline {D}Pugh Charts}{54}{Appendix.1.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {E.2}Wheel Testing}{63}{subsection.1.E.2}
+\contentsline {section}{Appendix \numberline {E}Prototype Tests}{57}{Appendix.1.E}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {E.3}Calculation of Dual Drive Torque}{63}{subsection.1.E.3}
+\contentsline {subsection}{\numberline {E.1}Feasibility Calculation for Fan Propulsion}{57}{subsection.1.E.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {E.4}Calculation of Prototype Torque}{65}{subsection.1.E.4}
+\contentsline {subsection}{\numberline {E.2}Wheel Testing}{58}{subsection.1.E.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {E.5}Frictional Data Test}{65}{subsection.1.E.5}
+\contentsline {subsection}{\numberline {E.3}Calculation of Dual Drive Torque}{59}{subsection.1.E.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {E.6}Light Sensor Test}{66}{subsection.1.E.6}
+\contentsline {subsection}{\numberline {E.4}Calculation of Prototype Torque}{60}{subsection.1.E.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {E.7}Track Simulation}{68}{subsection.1.E.7}
+\contentsline {subsection}{\numberline {E.5}Frictional Data Test}{61}{subsection.1.E.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {F}Weighted Decision Matrix}{70}{Appendix.1.F}
+\contentsline {subsection}{\numberline {E.6}Light Sensor Test}{62}{subsection.1.E.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {G}Preliminary Cost Estimates}{72}{Appendix.1.G}
+\contentsline {subsection}{\numberline {E.7}Track Simulation}{63}{subsection.1.E.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {G.1}Puff}{72}{subsection.1.G.1}
+\contentsline {section}{Appendix \numberline {F}Weighted Decision Matrix}{65}{Appendix.1.F}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {G.2}Get Hitched}{73}{subsection.1.G.2}
+\contentsline {section}{Appendix \numberline {G}Preliminary Cost Estimates}{66}{Appendix.1.G}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {G.3}Pump Chump}{74}{subsection.1.G.3}
+\contentsline {subsection}{\numberline {G.1}Puff}{66}{subsection.1.G.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {G.4}Simplicity}{75}{subsection.1.G.4}
+\contentsline {subsection}{\numberline {G.2}Get Hitched}{67}{subsection.1.G.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {H}Final Prototype Details}{76}{Appendix.1.H}
+\contentsline {subsection}{\numberline {G.3}Pump Chump}{68}{subsection.1.G.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {I}Bill of Materials}{77}{Appendix.1.I}
+\contentsline {subsection}{\numberline {G.4}Simplicity}{69}{subsection.1.G.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Appendix \numberline {H}Final Prototype Details}{70}{Appendix.1.H}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Appendix \numberline {I}Bill of Materials}{72}{Appendix.1.I}

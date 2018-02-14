@@ -10,7 +10,7 @@
 \begin{document}
 
 \section{Prototype Tests} \label{app:prototypetests}
-\subsection{Feasibility Calculation for Fan Propulsion}
+\subsection{Feasibility Calculation for Fan Propulsion} \label{app/sub:fan}
 
 The force required to move is greater than the frictional force of the train:
 \begin{align}
@@ -44,7 +44,7 @@ The diameter of the fan is too large to fit within this restriciton.
 \clearpage
 
 \subsection{Wheel Testing}
-\begin{table}
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l | l}
 		Prototype design & Number of derails \\ \hline
@@ -53,9 +53,8 @@ The diameter of the fan is too large to fit within this restriciton.
 		Conical wheels, high CoG & 9 \\
 	\end{tabular}
 
-	\label{app/table:wheeltest}
-
 	\caption{Wheel Design Test Results}
+	\label{app/table:wheeltest}
 \end{table}
 
 We decided to test the wheel shapes due to the emphasis on stability in our strategy.
@@ -67,7 +66,9 @@ We tested the wheel designs using the following procedure:
 	\item Record number of derailments across 9 trials
 \end{enumerate}
 
-\subsection{Calculation of Dual Drive Torque}
+\clearpage
+
+\subsection{Calculation of Dual Drive Torque} \label{app/sub:dualdrivetorque}
 
 We needed to compare the use of multiple motors to the use of a single motor.
 We used a simple calculation since this was much faster than creating a physical prototype.
@@ -90,7 +91,7 @@ By this logic, so long as other factors do not have a significant negative impac
 \clearpage
 
 \subsection{Calculation of Prototype Torque}
-\begin{table}
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l | l}
 		Mass & Max incline climbed\\ \hline
@@ -101,7 +102,6 @@ By this logic, so long as other factors do not have a significant negative impac
 
 	\caption{Torque Test Data}
 \end{table}
-
 
 This test was conducted to determine if the train could exert sufficient torque to push itself up the incline or if it could pull cargo as well.
 The train was placed on the track and the motor turned on.
@@ -121,6 +121,8 @@ Using this data, we calculated the max torque output of the motor.
 This output was much lower than we expected.
 We needed to increase the gear ratio we were using or we needed to add motors to increase the amount of torque supplied.
 
+\clearpage
+
 \subsection{Frictional Data Test}
 
 We determined the coefficient of static friction of our wheels to determine the maximum amount of force that could be used.
@@ -135,7 +137,7 @@ We varied the angle of the slope until the train began to slip, then we used the
 	\mu &= \tan{\theta}
 \end{align}
 
-\begin{table}
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l | l l l}
 		 & PLA & Rubber coating & Rubber band \\ \hline
@@ -144,12 +146,14 @@ We varied the angle of the slope until the train began to slip, then we used the
 	\end{tabular}
 
 	\caption{Static Coefficient of Friction Data}
-	\label{app/table:staticcoeeff}
+	\label{app/table:staticcoeff}
 \end{table}
 
 The drastic increase in friction demonstrated that we needed to use a cover on our wheels, and it showed that the rubber band would be best for this purpose.
 
-\subsection{Light Sensor Test}
+\clearpage
+
+\subsection{Light Sensor Test} \label{app/sub:photores}
 In order to test the feasibility of using a light sensor to count track ties we attached it to the bottom of our train with two LEDs to illuminate the tracks.
 
 \begin{figure}[H]
@@ -171,6 +175,7 @@ In order to test the feasibility of using a light sensor to count track ties we 
 	\end{tikzpicture}
 	% Specify title without footnotemark for list of figures
 	\caption[Photoresistor Track Detection Data]{Photoresistor Track Detection Data\protect\footnotemark}
+	\label{app/fig:photores}
 \end{figure}
 \footnotetext{The axes lack dimensions because they are raw values taken from an Arduino}
 
@@ -181,7 +186,7 @@ This test demonstrated that our braking system was feasible since it was possibl
 
 \clearpage
 
-\subsection{Track Simulation}
+\subsection{Track Simulation} \label{app/sub:tracksimulation}
 
 We wanted to test the parameters of our prototype on the tracks.
 Without access to the course, we decided to create a simulation that completed the following tasks (Figure \ref{app/fig:simflow}) to model the prototype completing the track.

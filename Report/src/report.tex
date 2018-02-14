@@ -4,34 +4,44 @@
 \usepackage{import}
 \usepackage[titletoc]{appendix}
 \usepackage[table]{xcolor}
-\usepackage{glossaries}
+\usepackage[acronym,toc,numberedsection]{glossaries}
+\usepackage{chngcntr}
 
+\makeglossaries
+
+%Add star to first instance of text
+\defglsentryfmt{
+	\ifglsused{\glslabel}{\hspace{-3pt}\glsgenentryfmt\hspace{-6pt}}{\hspace{-3pt}\glsgenentryfmt *\hspace{-6pt}}
+}
 \newglossaryentry{funcdecomp}{
-	name={Functional Decomposition},
+	name={functional decomposition},
 	description={The breakdown of a complex design into numerous, simpler tasks that the overall design must complete}
 }
+%\setacronymstyle{long-short}
+%\newacronym[description={A quantitative method of scoring that assesses the performance of concepts across weighted criteria using absolute scoring}]{wdmacr}{WDM}{weighted decision-making matrix}
+%\newacronym[description={A quantitative method of scoring that assesses the performance of concepts across weighted criteria using absolute scoring}]{wdm}{WDM}{weighted decision-making matrix}
 \newglossaryentry{wdm}{
-	name={Weighted Decision Matrix (WDM)},
+	name={weighted decision-making matrix},
 	description={A quantitative method of scoring that assesses the performance of concepts across weighted criteria using absolute scoring}
 }
 \newglossaryentry{pugh}{
-	name={Pugh Chart},
+	name={Pugh chart},
 	description={A method of ranking that compares a concept’s performance to a datum qualitatively as better, worse, or the same.}
 }
 \newglossaryentry{toplevel}{
-	name={Top-Level Functions},
+	name={top-level functions},
 	description={The tasks that every design-to-be must complete}
 }
 \newglossaryentry{conceptfrags}{
-	name={Concept Fragments},
-	description={Possible solutions to a given function}
+	name={concept fragment},
+	description={Possible solution to a given function}
 }
 \newglossaryentry{morph}{
-	name={Morphological Chart},
+	name={morphological chart},
 	description={A methodical way of combining various concept fragments into whole concepts}
 }
 \newglossaryentry{pot}{
-	name={Potentiometer},
+	name={potentiometer},
 	description={A component that varies its electrical resistance based on the displacement of the dial on its face from its original position}
 }
 
@@ -40,53 +50,53 @@
 	description={Integrated computer onto a circuit board that receives input from computer programs and drives output}
 }
 \newglossaryentry{photores}{
-	name={Photoresistor},
+	name={photoresistor},
 	description={A component that varies its electrical resistance based on the amount of light it detects}
 }
 \newglossaryentry{wholeconc}{
-	name={Whole Concept},
+	name={whole concept},
 	description={Potential complete solution for a design}
 }
 \newglossaryentry{prototype}{
-	name={Prototype},
+	name={prototype},
 	description={A preliminary or final model that built to test the whole concept and collect information for further improvement}
 }
 
 \newglossaryentry{torque}{
-	name={Torque},
+	name={torque},
 	description={Rotational force that causes the object to rotate about its centre}
 }
 
 \newglossaryentry{stalltorqure}{
-	name={Stal Torque},
+	name={stall torque},
 	description={Produced torque from a device outputs in no rotational motion (zero angular velocity). (it might be caused due to overload of the system)}
 }
 
 \newglossaryentry{drumbrake}{
-	name={Drum Brake},
+	name={drum brake},
 	description={Type of brake that uses friction pads to stop rotation of wheels}
 }
 
 \newglossaryentry{axle}{
-	name={Axle},
+	name={axle},
 	description={Shaft that connects and/or drives two wheels}
 }
 
 \newglossaryentry{conical}{
-	name={Conical Wheels},
+	name={conical wheels},
 	description={The shape of wheels commonly used for locomotive wheels which allow turning around corners}
 }
 \newglossaryentry{gearbox}{
-	name={Gearbox},
+	name={gearbox},
 	description={Machine that transmits mechanical power through meshing gears}
 }
 
 \newglossaryentry{winnow}{
-	name={Winnowing},
+	name={winnowing},
 	description={Process that is used to screen out concepts based on feasibility, requirements, and technical readiness}
 }
 \newglossaryentry{techready}{
-	name={Technical Readiness},
+	name={technical readiness},
 	description={Process of researching for availability and ease of manufacturing, operating, and disposing}
 }
 \newglossaryentry{eval}{
@@ -106,7 +116,7 @@
 	description={Commonly used 3D-printing material}
 }
 \newglossaryentry{pulleydrive}{
-	name={Pulley Drive System},
+	name={pulley drive system},
 	description={One type of power transmission that uses rubber belt that’s wrapped around two synchronically rotating pulleys of various sizes}
 }
 \newglossaryentry{chassis}{
@@ -185,6 +195,7 @@
 \clearpage
 
 \printglossaries
+\printnoidxglossaries
 \clearpage
 
 \import{sections/appendices/}{references}
@@ -192,12 +203,14 @@
 
 
 \begin{appendices}
+	\counterwithin{figure}{section}
+	\counterwithin{table}{section}
 	\import{sections/appendices/}{func_decomp}
 	\clearpage
 
 	\import{sections/appendices/}{concepts.tex}
 	\clearpage
-	
+
 	\import{sections/appendices/}{winnowing.tex}
 	\clearpage
 

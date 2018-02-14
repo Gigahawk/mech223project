@@ -20,11 +20,11 @@
 \usepackage[backend=biber,style=apa,hyperref=true]{biblatex}
 \addbibresource{bibliography.bib}
 
-% Change urls back to monospace typewriter style 
+% Change urls back to monospace typewriter style
 % font for bibliography
 \urlstyle{tt}
 
-\usepackage{acro}
+%\usepackage{acro}
 % \acsetup{first-style=long}
 %
 %% Allow acronyms to be a separate file
@@ -39,6 +39,9 @@
 
 % Double space text (yea i know its weird)
 \linespread{1.3}
+
+% Allow \nameref (gets name of label)
+\usepackage{nameref}
 
 % Reset toc to have single space
 \usepackage{tocloft}
@@ -69,7 +72,7 @@
 % \setlength{\headheight}{15.2pt}
 %
 %\usepackage{tikz}
-%\usetikzlibrary{arrows,shapes} 
+%\usetikzlibrary{arrows,shapes}
 %\usetikzlibrary{positioning}
 %\usetikzlibrary{arrows.meta}
 %\usetikzlibrary{calc}
@@ -78,7 +81,7 @@
 
 \setlength{\parskip}{10pt}
 
-% Pre-define macro for the running header 
+% Pre-define macro for the running header
 \def\therunningheader{}
 
 % Create pagestyles for title and rest of report
@@ -156,7 +159,7 @@
 	}{\thefor}
 }
 \def\changemargin#1{\list{}{\rightmargin#1\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist 
+\let\endchangemargin=\endlist
 
 \date{\today} % needed for \thedate to work
 \renewcommand{\maketitle}{
@@ -186,7 +189,7 @@
 	\end{center}
 	\noindent
 	\normalfont
-	\begin{changemargin}{0.1in}
+	\begin{changemargin}{0.07in}
 
 }{\end{changemargin}}
 

@@ -15,6 +15,9 @@ all:
 #	latexmk -f -c -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/*.tex
 #	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/$(APPENDDIR)/*.tex
 
+report:
+	latexmk -f -pdf -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/report.tex
+
 clean:
 	rm -rf $(BUILDDIR)/*
 
