@@ -97,7 +97,7 @@
 	\fancyfoot{}
 
 	\lhead{Running head: \therunningheader}
-	\rhead{\thepage}
+	\rhead{}
 }
 
 % Page style used for rest of report
