@@ -20,3 +20,11 @@ clean:
 
 clear:
 	rm -rf $(TEMPDIR)/*
+
+tidy:
+	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(RESDIR)/*.tex
+	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/*.tex
+	latexmk -f -c -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/*.tex
+	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/$(APPENDDIR)/*.tex
+
+

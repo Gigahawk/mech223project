@@ -47,7 +47,7 @@
 %}
 \newcommand{\positionformat}{
 	\ForEachX{|}{
-		\thislevelitem \par
+		\thislevelitem \\
 	}{\theposition}
 }
 \newcommand{\address}[1]{
@@ -75,9 +75,9 @@
 	\thedate \par
 	\vspace{10pt}
 
-	\theto, \par
+	\theto, \\
 	\positionformat \par
-	\vspace{10pt}
+	\vspace{12pt}
 
 	Dear \shortto: \par
 }

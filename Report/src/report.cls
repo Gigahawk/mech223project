@@ -1,6 +1,5 @@
 % Load the Base Class
-\LoadClassWithOptions{article}
-
+\LoadClass[12pt]{article}
 %% Begin dependencies
 \usepackage{sectsty}
 %% Make sections sansserif
@@ -16,7 +15,15 @@
 %
 \usepackage[hidelinks]{hyperref}
 \usepackage{titling}
-%
+
+% Enable bibliography with clickable links
+\usepackage[backend=biber,style=apa,hyperref=true]{biblatex}
+\addbibresource{bibliography.bib}
+
+% Change urls back to monospace typewriter style 
+% font for bibliography
+\urlstyle{tt}
+
 \usepackage{acro}
 % \acsetup{first-style=long}
 %
@@ -26,6 +33,30 @@
 \usepackage{geometry}
 % Set the Paper Size and margins
 \geometry{margin=1.0in}
+
+% Enable ragged right margin
+\raggedright
+
+% Double space text (yea i know its weird)
+\linespread{1.3}
+
+% Reset toc to have single space
+\usepackage{tocloft}
+\renewcommand\cftsecafterpnum{\vskip10pt}
+
+% Show subfigures in list of figures
+\setcounter{lofdepth}{2}
+
+% Allow itemlist formatting
+\usepackage{enumitem}
+
+% Pack in list items tighter
+\setlist[itemize]{noitemsep}
+\setlist[enumerate]{noitemsep}
+
+% Allow multiline cells
+\usepackage{makecell}
+
 %
 %\usepackage{array}
 %% Create table columns with specified length
@@ -35,9 +66,7 @@
 %% Make table rows spaced apart
 %\renewcommand{\arraystretch}{1.5}
 
-\usepackage{fancyhdr}
 % \setlength{\headheight}{15.2pt}
-\pagestyle{fancyplain}
 %
 %\usepackage{tikz}
 %\usetikzlibrary{arrows,shapes} 
@@ -49,22 +78,57 @@
 
 \setlength{\parskip}{10pt}
 
+% Pre-define macro for the running header 
 \def\therunningheader{}
 
-\fancypagestyle{empty}{
- \fancyhf{}
- \fancyhead[L]{\therunningheader}
-}
-\renewcommand{\headrulewidth}{0pt}
-\lhead{\therunningheader}
-\rhead{}
+% Create pagestyles for title and rest of report
+\usepackage{fancyhdr}
+% Page style used for title
+\fancypagestyle{reporttitle}{
+	% Explicitly set length of header to make sure content fits
+	\setlength{\headheight}{18pt}
 
-% Prevent hyphenation
-%\raggedright
+	% Remove header line and reset headers/footer
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhead{}
+	\fancyfoot{}
+
+	\lhead{Running head: \therunningheader}
+	\rhead{\thepage}
+}
+
+% Page style used for rest of report
+\fancypagestyle{reportmain}{
+	% Explicitly set length of header to make sure content fits properly
+	\setlength{\headheight}{18pt}
+
+	% Remove header line and reset headers/footers
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhead{}
+	\fancyfoot{}
+
+	\lhead{\therunningheader}
+	\rhead{\thepage}
+}
+
+\pagestyle{reportmain}
+
+%
+%\fancypagestyle{empty}{
+% \fancyhf{}
+% \fancyhead[L]{\therunningheader}
+%}
+%
+%\renewcommand{\headrulewidth}{0pt}
+%\lhead{\therunningheader}
+%\rhead{}
 
 % Prevent paragraphs from cutting off
-%\widowpenalties 1 10000
-%\raggedbottom
+\widowpenalties 1 10000
+\raggedbottom
+
+% Disable indentation
+\setlength{\parindent}{0mm}
 
 % Make captions centered
 \captionsetup{justification=centering,margin=2cm}
@@ -97,15 +161,15 @@
 \date{\today} % needed for \thedate to work
 \renewcommand{\maketitle}{
 	\begin{titlepage}
-		% \centering
+		\thispagestyle{reporttitle}
 		\vspace*{0.5in}
 		%\begin{changemargin}{1.5in}
 			\centering
 
 			{\huge\bfseries \thetitle \par }
-			\vspace{1.2in}
+			\vspace{0.5in}
 			{\large\bfseries \forformat }
-			\vspace{1.2in}
+			\vspace{0.5in}
 			{\large\bfseries \authorformat }
 
 			\vfill
@@ -118,11 +182,11 @@
 
 \renewenvironment{abstract}{
 	\begin{center}
-		{\Large\bfseries Abstract \par}
+		{\Large\bfseries Abstract}
 	\end{center}
 	\noindent
 	\normalfont
-	\begin{changemargin}{0.5in}
+	\begin{changemargin}{0.1in}
 
 }{\end{changemargin}}
 

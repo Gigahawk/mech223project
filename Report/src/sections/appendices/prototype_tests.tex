@@ -169,7 +169,8 @@ In order to test the feasibility of using a light sensor to count track ties we 
 			\addplot table[x=t,y=val, col sep=comma,mark=none]{lightsensor.csv};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Photoresistor Track Detection Data\protect\footnotemark}
+	% Specify title without footnotemark for list of figures
+	\caption[Photoresistor Track Detection Data]{Photoresistor Track Detection Data\protect\footnotemark}
 \end{figure}
 \footnotetext{The axes lack dimensions because they are raw values taken from an Arduino}
 
