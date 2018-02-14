@@ -113,7 +113,32 @@
 	\lhead{\therunningheader}
 	\rhead{\thepage}
 }
+% Make all the pages the same
+\fancypagestyle{empty}{
+	% Explicitly set length of header to make sure content fits properly
+	\setlength{\headheight}{18pt}
 
+	% Remove header line and reset headers/footers
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhead{}
+	\fancyfoot{}
+
+	\lhead{\therunningheader}
+	\rhead{\thepage}
+}
+% Make all the pages the same
+\fancypagestyle{plain}{
+	% Explicitly set length of header to make sure content fits properly
+	\setlength{\headheight}{18pt}
+
+	% Remove header line and reset headers/footers
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhead{}
+	\fancyfoot{}
+
+	\lhead{\therunningheader}
+	\rhead{\thepage}
+}
 \pagestyle{reportmain}
 
 %
