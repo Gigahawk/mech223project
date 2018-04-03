@@ -29,5 +29,6 @@ tidy:
 	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/*.tex
 	latexmk -f -c -output-directory=../$(BUILDDIR) -cd $(SOURCEDIR)/*.tex
 	latexmk -f -c -output-directory=../../$(BUILDDIR) -cd $(SOURCEDIR)/$(SECTIONDIR)/$(APPENDDIR)/*.tex
+	find $(BUILDDIR)/ -type f ! -name '*.pdf' -delete
 
 

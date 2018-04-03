@@ -1,9 +1,0 @@
-[0] Config.pm:302> INFO - This is Biber 2.10
-[1] Config.pm:305> INFO - Logfile is '../bin/projplanning.blg'
-[66] biber:313> INFO - === Wed Feb 14, 2018, 02:35:02
-[108] Biber.pm:371> INFO - Reading '../bin/projplanning.bcf'
-[264] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
-[283] Utils.pm:193> WARN - The file '../bin/projplanning.bcf' does not contain any citations!
-[300] bbl.pm:617> INFO - Writing '../bin/projplanning.bbl' with encoding 'ascii'
-[301] bbl.pm:720> INFO - Output to ../bin/projplanning.bbl
-[301] Biber.pm:110> INFO - WARNINGS: 1
